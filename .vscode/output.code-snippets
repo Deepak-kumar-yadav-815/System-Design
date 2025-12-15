@@ -1,0 +1,9 @@
+{
+	"out": {
+  "prefix": "out",
+  "body": [
+    "freopen(\"output.txt\",\"w\",stdout);"
+  ],
+  "description": "out"
+}
+}
