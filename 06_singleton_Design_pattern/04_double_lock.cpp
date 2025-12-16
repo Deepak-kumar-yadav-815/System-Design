@@ -6,7 +6,7 @@ using namespace std;
 class Singleton {
 private:
     static Singleton* instance;
-    static mutex mtx;
+    // static mutex mtx;
 
     Singleton() { 
         cout << "Singleton Constructor Called!" << endl; 
@@ -16,7 +16,7 @@ public:
     // Double check locking..
     static Singleton* getInstance() {
         if (instance == nullptr) {  // First check (no locking)
-            lock_guard<mutex> lock(mtx);  // Lock only if needed
+            // lock_guard<mutex> lock(mtx);  // Lock only if needed
             if (instance == nullptr) {  // Second check (after acquiring lock)
                 instance = new Singleton();
             }
@@ -27,7 +27,7 @@ public:
  
 // Initialize static members
 Singleton* Singleton::instance = nullptr;
-mutex Singleton::mtx;
+// mutex Singleton::mtx;
 
 int main() {
     Singleton* s1 = Singleton::getInstance();
