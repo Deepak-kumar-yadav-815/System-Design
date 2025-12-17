@@ -69,9 +69,15 @@ class Subscriber:public Isubscriber{
 signed main() {
     freopen("output.txt","w",stdout);
     channel* CodeExplorerDKY = new channel("CodeExplorerDKY");
+    channel* ch = new channel("MR BEAST");
     Isubscriber* sub1 = new Subscriber("Aman Singh",CodeExplorerDKY);
     Isubscriber* sub2 = new Subscriber("Divyanshu kumar",CodeExplorerDKY);
+    Isubscriber* sub3 = new Subscriber("ABS",ch);
+    Isubscriber* sub4 = new Subscriber("DPS",ch);
+    ch->Subscribe(sub3);
+    ch->Subscribe(sub4);
     CodeExplorerDKY->Subscribe(sub1);
     CodeExplorerDKY->Subscribe(sub2);
     CodeExplorerDKY->uploadVideo("Binary search tutorial");
+    ch->uploadVideo("HELLO WORLD");
 }
